@@ -30,20 +30,20 @@
             </table>
         </nav>
         {% if news %}
-            <div>
+        <table>
             {% load static %}
             {% for release in news %}
-                <div>
-                    <div width="20%">
+                <tr>
+                    <th width="20%">
                         <h5 class="date">{{ release.date }}</h5>
-                    </div>
-                    <div width="80%">
+                    </th>
+                    <th width="80%">
                         <h3 class="release">{{ release.name }}</h3>
                         <p class="description">{{ release.description }}</p>
-                    </div>
-                </div>
-            {% endfor %}            
-            </div>
+                    </th>
+                </tr>
+            {% endfor %}   
+        </table>
         {% else %}
         <h1>Nothing posted yet</h1>
         {% endif %}

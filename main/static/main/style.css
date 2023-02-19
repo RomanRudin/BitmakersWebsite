@@ -30,24 +30,17 @@ body {
 /*audio {
   
 }*/
-.container {
-  height: 100%;
-  width: 100%;
-  resize: both; }
+/* Elements */
+header {
+  color: red;
+  background-color: black; }
 
-.in-container {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  vertical-align: top;
-  font-size: 12px;
-  width: 20%; }
+footer {
+  color: red;
+  background-color: #3e0e75b7; }
 
-.link {
-  width: 100%; }
-
-.link-div {
-  width: 100%; }
+nav {
+  height: 15%; }
 
 table {
   overflow-y: auto;
@@ -58,12 +51,7 @@ table {
 tr {
   margin-bottom: 10px; }
 
-button {
-  width: 100%;
-  height: 100%;
-  background: #2975B7;
-  font-size: large; }
-
+/* General */
 ::-webkit-scrollbar {
   width: 10px; }
 
@@ -76,12 +64,52 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: radial-gradient(#6B1D9A 0%, #FF0061 100%); }
 
-header {
-  color: red;
-  background-color: black; }
+.nav-button {
+  width: 100%;
+  height: 100%;
+  background: #2975B7;
+  font-size: large; }
 
-footer {
-  color: red;
-  background-color: #3e0e75b7; }
+.date {
+  font-family: Arial, Helvetica, sans-serif; }
+
+/* Main */
+.name {
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: center; }
+
+.description {
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: center; }
+
+/* Beats */
+.container {
+  height: 100%;
+  width: 100%;
+  resize: both; }
+
+.in-container {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  width: 20%; }
+
+.beat-name {
+  font-family: Arial, Helvetica, sans-serif; }
+
+/* Releases*/
+.release {
+  font-family: Arial, Helvetica, sans-serif; }
+
+.description {
+  font-family: Arial, Helvetica, sans-serif; }
+
+/* Links */
+.link-div {
+  font-family: Arial, Helvetica, sans-serif; }
+
+.link {
+  font-family: Arial, Helvetica, sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

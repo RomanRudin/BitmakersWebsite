@@ -33,13 +33,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>
+                        <th width="5%">
+
+                        </th>
+                        <th width="35%">
                             Track
                         </th>
-                        <th>
-                            Date
+                        <th width="40%">
+                            Name
                         </th>
-                        <th>
+                        <th width="20%">
                             Licenses
                         </th>
                     </tr>
@@ -48,24 +51,29 @@
                     {% load static %}
                     {% for beat in beats %}
                         <tr>
-                            <th>
+                            <th width="5%">
+                                <!-- 
+                                    In need of FileFields
+                                <img src={{ beat.beatogg }} />     
+                                -->
+                                <img src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" />
+                            </th>
+                            <th width="35%">
                                 <audio controls>
                                     <!-- 
                                         In need of FileFields
-                                    <source src={{ beat.beatogg }} type="audio/ogg">
-                                    <source src={{ beat.beat }} type="audio/mpeg">      
+                                    <source src={{ beat.beatogg }} type="audio/ogg" />
+                                    <source src={{ beat.beat }} type="audio/mpeg" />      
                                     -->
-                                    <source src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" type="audio/mp3">
-                                    <source src="{% get_static_prefix %}main/media/{{ beat.name }}.ogg" type="audio/ogg">
+                                    <source src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" type="audio/mp3" />
+                                    <source src="{% get_static_prefix %}main/media/{{ beat.name }}.ogg" type="audio/ogg" />
                                 </audio>
                             </th>
-                            <th>
-                                <!-- 
-                                    In need of DateField
+                            <th width="40%">
+                                <h3 class="beat-name">{{ beat.name }}</h3>
                                 <h6 class="date">{{ beat.date }}</h6> 
-                                -->
                             </th>
-                            <th>
+                            <th width="20%">
                                 <div class="container">
                                     {% if beat.lecense_mp3 %}
                                         <img src="{% get_static_prefix %}main/image/license_mp3.png" class="in-container" />

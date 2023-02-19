@@ -1,13 +1,13 @@
-from os import link
-from unicodedata import name
 from django.db import models
-from numpy import true_divide
+import datetime
 
-# Create your models here.
+'''
+After test, please, DELETE ALL THE DEFAULT VALUES ON THIS LEVEL             I
+'''
 class Music(models.Model):
-    name = models.CharField(primary_key=True, max_length=100, name='name')
-    description = models.CharField(max_length=2000, name='description')
-    # date = models.DateField(name="date")
+    name = models.CharField(primary_key=True, max_length=100, name='name',  default="Жаль")
+    description = models.CharField(max_length=2000, name='description',     default="The best song in history of humanity")
+    date = models.DateField(name="date", default=datetime.date.today)
     # link = models.CharField(max_length=100, name='link')
     # image = models.ImageField(name='image')
     # beat = models.FileField(name='beat')
@@ -18,12 +18,19 @@ class Music(models.Model):
     license_unlimited = models.BooleanField(name="license_unlimited", default=False)
     license_exclisive = models.BooleanField(name="license_exclisive", default=False)
 
+
+'''
+After test, please, DELETE ALL THE DEFAULT VALUES ON THIS LEVEL             I
+'''
 class News(models.Model):
-    name = models.CharField(primary_key=True, max_length=100, name='name')
-    description = models.CharField(max_length=2000, name='description')
-    # date = models.DateField(name="date")
+    name = models.CharField(primary_key=True, max_length=100, name='name',  default="NEW RELEASE! TODAY!")
+    description = models.CharField(max_length=2000, name='description',     default="Ты думал здесь что-то будет?")
+    date = models.DateField(name="date", default=datetime.date.today)
 
 
+'''
+After test, please, DELETE ALL THE DEFAULT VALUES ON THIS LEVEL             I
+'''
 class Links(models.Model):
-    name = models.CharField(primary_key=True, max_length=100, name="name")
-    link = models.CharField(max_length=2000, name='link')
+    name = models.CharField(primary_key=True, max_length=100, name="name",  default="VK")
+    link = models.CharField(max_length=2000, name='link',                   default="https://vk.com/")
