@@ -30,6 +30,19 @@ body {
 /*audio {
   
 }*/
+.container {
+  height: 100%;
+  width: 100%;
+  resize: both; }
+
+.in-container {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  font-size: 12px;
+  width: 20%; }
+
 table {
   overflow-y: auto;
   height: 100%;
