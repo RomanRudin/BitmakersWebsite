@@ -12,19 +12,19 @@
         <nav>
             <table width="100%">
                 <tr width="100%">   
-                    <th><form method="POST" action="{% url 'bits' %}" id="bits"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                    <th><form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
                         {% csrf_token %}
                     </form>
-                    <button type="submit" class="nav-button" form="bits" value="bits">Bits</button></th>
-                    <th><form method="POST" action="{% url 'releases' %}" id="releases"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                    <button type="submit" class="nav-button" form="beats" value="beats">beats</button></th>
+                    <th><form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
                         {% csrf_token %}
                     </form>
-                    <button type="submit" class="nav-button" form="releases" value="bits">Fututre releases</button>
+                    <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
                     </th>
-                    <th><form method="POST" action="{% url 'links' %}" id="links"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                    <th><form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
                         {% csrf_token %}
                     </form>
-                    <button type="submit" class="nav-button" form="links" value="bits">Links</button>
+                    <button type="submit" class="nav-button" form="links" value="beats">Links</button>
                     </th>
                 </tr>
             </table>
@@ -35,6 +35,8 @@
             <div class="link-div">
                 <a class="link" href="{{ link.link }}">{{ link.name }}</a>
             </div>
+            {% endfor %}
         </div>
+        {% endif %}
     </body>
 </html>
