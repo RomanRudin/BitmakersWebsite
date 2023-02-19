@@ -5,9 +5,13 @@ from django.template import loader
 from django.shortcuts import get_object_or_404, render
 import logging
 
-from .models import Music
+from .models import Music, News
 
 def index(request) -> HttpResponse:
+    return render(request, 'main/main.html')
+
+
+def bits(request) -> HttpResponse:
     try:
         bit = Music.objects.order_by('name') #TODO order_by('date')
     except Music.DoesNotExist:
@@ -16,4 +20,20 @@ def index(request) -> HttpResponse:
         context = {
             'bit': bit,
         }
-        return render(request, 'cv/main.html', context)
+        return render(request, 'main/bits.html', context)
+
+
+def releases(request) -> HttpResponse:
+    try:
+        news = News.objects.order_by('date')
+    except News.DoesNotExist:
+        raise Http404('News does not exist')
+    else:
+        context = {
+            'news': news,
+        }
+        return render(request, 'main/releases.html', context)
+
+
+def links(request) -> HttpResponse:
+    return render(request, 'main/links.html')

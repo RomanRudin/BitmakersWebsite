@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% load static %}
+        <link href="{% static 'main/style.css' %}" rel="stylesheet" />
+        <meta charset="UTF-8" />
+        <title>Future releases</title>
+    </head>
+    <body>
+        <nav>
+            <table width="100%">
+                <tr width="100%">   
+                    <th><form method="POST" action="{% url 'bits' %}" id="bits"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="bits" value="bits">Bits</button></th>
+                    <th><form method="POST" action="{% url 'releases' %}" id="releases"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="releases" value="bits">Fututre releases</button>
+                    </th>
+                    <th><form method="POST" action="{% url 'links' %}" id="links"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="links" value="bits">Links</button>
+                    </th>
+                </tr>
+            </table>
+        </nav>
+        
+    </body>
+</html>
