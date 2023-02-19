@@ -1,3 +1,4 @@
+from os import link
 from unicodedata import name
 from django.db import models
 from numpy import true_divide
@@ -21,3 +22,8 @@ class News(models.Model):
     name = models.CharField(primary_key=True, max_length=100, name='name')
     description = models.CharField(max_length=2000, name='description')
     # date = models.DateField(name="date")
+
+
+class Links(models.Model):
+    name = models.CharField(primary_key=True, max_length=100, name="name")
+    link = models.CharField(max_length=2000, name='link')

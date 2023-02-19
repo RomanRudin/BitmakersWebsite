@@ -43,6 +43,12 @@ body {
   font-size: 12px;
   width: 20%; }
 
+.link {
+  width: 100%; }
+
+.link-div {
+  width: 100%; }
+
 table {
   overflow-y: auto;
   height: 100%;

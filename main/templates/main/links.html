@@ -29,6 +29,12 @@
                 </tr>
             </table>
         </nav>
-        
+        {% if links %}
+        <div>
+            {% for link in links %}
+            <div class="link-div">
+                <a class="link" href="{{ link.link }}">{{ link.name }}</a>
+            </div>
+        </div>
     </body>
 </html>
