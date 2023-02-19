@@ -29,6 +29,21 @@
                 </tr>
             </table>
         </nav>
+        {% if news %}
+            <div>
+            {% load static %}
+            {% for release in news %}
+                <audio controls>
+                    <!--<source src={{ bit.bitogg }} type="audio/ogg">
+                    <source src={{ bit.bit }} type="audio/mpeg">-->
+                    <source src="{% get_static_prefix %}main/media/{{ bit.name }}.mpeg" type="audio/mpeg">
+                    <source src="{% get_static_prefix %}main/media/{{ bit.name }}.ogg" type="audio/ogg">
+                </audio>
+            {% endfor %}            
+            </div>
+        {% else %}
+        <h1>Nothing posted yet</h1>
+        {% endif %}
         
     </body>
 </html>

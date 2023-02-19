@@ -4,7 +4,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {% load static %}
-        <link href="{% static 'cv/style.css' %}" rel="stylesheet" />
+        <link href="{% static 'main/style.css' %}" rel="stylesheet" />
         <meta charset="UTF-8" />
         <title>Bits</title>
     </head>
@@ -29,6 +29,21 @@
                 </tr>
             </table>
         </nav>
+        {% if bits %}
+            <div>
+            {% load static %}
+            {% for bit in bits %}
+                <audio controls>
+                    <!--<source src={{ bit.bitogg }} type="audio/ogg">
+                    <source src={{ bit.bit }} type="audio/mpeg">-->
+                    <source src="{% get_static_prefix %}main/media/{{ bit.name }}.mpeg" type="audio/mpeg">
+                    <source src="{% get_static_prefix %}main/media/{{ bit.name }}.ogg" type="audio/ogg">
+                </audio>
+            {% endfor %}            
+            </div>
+        {% else %}
+        <h1>Nothing posted yet</h1>
+        {% endif %}
         
     </body>
 </html>

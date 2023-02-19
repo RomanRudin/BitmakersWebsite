@@ -10,6 +10,7 @@ class Music(models.Model):
     # link = models.CharField(max_length=100, name='link')
     # image = models.ImageField(name='image')
     # bit = models.FileField(name='bit')
+    # bitogg = models.FileField(name='bitogg')
 
 class News(models.Model):
     name = models.CharField(primary_key=True, max_length=100, name='name')

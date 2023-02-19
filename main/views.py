@@ -13,19 +13,19 @@ def index(request) -> HttpResponse:
 
 def bits(request) -> HttpResponse:
     try:
-        bit = Music.objects.order_by('name') #TODO order_by('date')
+        bits = Music.objects.order_by('name') #TODO order_by('date')
     except Music.DoesNotExist:
         raise Http404("Music does not exist")
     else:
         context = {
-            'bit': bit,
+            'bits': bits,
         }
         return render(request, 'main/bits.html', context)
 
 
 def releases(request) -> HttpResponse:
     try:
-        news = News.objects.order_by('date')
+        news = News.objects.order_by('name')
     except News.DoesNotExist:
         raise Http404('News does not exist')
     else:
