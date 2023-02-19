@@ -11,11 +11,11 @@ class Music(models.Model):
     # image = models.ImageField(name='image')
     # bit = models.FileField(name='bit')
     # bitogg = models.FileField(name='bitogg')
-    license_mo3 = models.BooleanField(name="license_mo3")
-    license_wav = models.BooleanField(name="license_wav")
-    license_trackout = models.BooleanField(name="license_trackout")
-    license_unlimited = models.BooleanField(name="license_unlimited")
-    license_exclisive = models.BooleanField(name="license_exclisive")
+    license_mp3 = models.BooleanField(name="license_mp3", default=False)
+    license_wav = models.BooleanField(name="license_wav", default=False)
+    license_trackout = models.BooleanField(name="license_trackout", default=False)
+    license_unlimited = models.BooleanField(name="license_unlimited", default=False)
+    license_exclisive = models.BooleanField(name="license_exclisive", default=False)
 
 class News(models.Model):
     name = models.CharField(primary_key=True, max_length=100, name='name')
