@@ -95,7 +95,8 @@ tr {
 }
 
 .date {
-  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: medium;
 }
 
 
@@ -104,12 +105,12 @@ tr {
 /* Main */
 .name {
   font-family: Arial, Helvetica, sans-serif;
-  align-self: center;
+  text-align: center;
 }
 
 .description {
   font-family: Arial, Helvetica, sans-serif;
-  align-self: center;
+  text-align: center;
 }
 
 
@@ -121,16 +122,41 @@ tr {
   width: 100%;
   resize: both;
 }
+.line {
+  margin-bottom: 10px;
+  border: rgb(27, 6, 6) 5px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #CE1313 1%, #296964 65%);
+  max-height: 50px;
+}
 .in-container {
   display: inline-block; 
-  *display: inline; 
-  zoom: 1; 
-  vertical-align: top; 
+  max-height: 50px;
+}
+#img {
+  width: 5%;
+}
+#beat {
+  width: 35%;
+}
+#name {
+  width: 40%;
+}
+#licenses {
   width: 20%;
 }
+
+.beat_player {
+  width: 90%;
+  align-self: center;
+  font-size: medium;
+}
+
 .beat-name {
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
+
 
 
 
