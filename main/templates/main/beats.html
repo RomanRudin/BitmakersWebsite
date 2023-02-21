@@ -33,17 +33,17 @@
             <table>
                 <thead>
                     <tr>
-                        <th width="5%">
+                        <th width="10%">
 
                         </th>
                         <th width="35%">
-                            Track
+                            <h3 class="thead">Track</h3>
                         </th>
                         <th width="40%">
-                            Name
+                            <h3 class="thead">Name</h3>
                         </th>
-                        <th width="20%">
-                            Licenses
+                        <th width="15%">
+                            <h3 class="thead">Licenses</h3>
                         </th>
                     </tr>
                 </thead>     
@@ -51,6 +51,7 @@
             {% load static %}
             {% for beat in beats %}
                 <div class="line">
+                    <div class="in-container" id="spacer"></div>
                     <div class="in-container" id="img">
                         <!-- 
                             In need of FileFields
@@ -58,7 +59,7 @@
                         -->
                         <img src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" />
                     </div>
-                    <div class="in-container" id="beat">
+                    <div class="in-container" id="beat" style="vertical-align: middle;">
                         <audio class="beat_player" controls>
                             <!-- 
                                 In need of FileFields
@@ -70,8 +71,8 @@
                         </audio>
                     </div>
                     <div class="in-container" id="name">
-                        <h3 class="beat-name">{{ beat.name }}</h3>
-                        <h6 class="date">{{ beat.date }}</h6> 
+                        <p class="beat-name">{{ beat.name }}</p>
+                        <p class="date" id="beat-date">{{ beat.date }}</p>
                     </div>
                     <div class="in-container" id="license">
                         <div class="container">

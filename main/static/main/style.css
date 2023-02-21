@@ -71,8 +71,8 @@ tr {
   font-size: large; }
 
 .date {
-  text-align: center;
-  font-size: medium; }
+  font-size: medium;
+  text-align: center; }
 
 /* Main */
 .name {
@@ -84,6 +84,13 @@ tr {
   text-align: center; }
 
 /* Beats */
+.thead {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
 .container {
   height: 100%;
   width: 100%;
@@ -94,11 +101,16 @@ tr {
   border: #1b0606 5px;
   border-radius: 25px;
   background: linear-gradient(90deg, #CE1313 1%, #296964 65%);
-  max-height: 50px; }
+  max-height: fit-content;
+  min-height: 60px; }
 
 .in-container {
   display: inline-block;
-  max-height: 50px; }
+  max-height: 50px;
+  vertical-align: middle; }
+
+#spacer {
+  width: 5%; }
 
 #img {
   width: 5%; }
@@ -110,16 +122,27 @@ tr {
   width: 40%; }
 
 #licenses {
-  width: 20%; }
+  width: 15%; }
 
 .beat_player {
   width: 90%;
   align-self: center;
-  font-size: medium; }
+  font-size: medium;
+  padding-top: 3px; }
 
 .beat-name {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center; }
+
+#beat-date {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 
 /* Releases*/
 .release {
