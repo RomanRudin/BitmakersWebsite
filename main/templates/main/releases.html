@@ -4,7 +4,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {% load static %}
-        <link href="{% static 'main/style.css' %}" rel="stylesheet" />
+        <link href="{% static 'main/style/releases.css' %}" rel="stylesheet" />
         <meta charset="UTF-8" />
         <title>Future releases</title>
     </head>
@@ -29,23 +29,28 @@
                 </tr>
             </table>
         </nav>
-        {% if news %}
-        <table>
-            {% load static %}
-            {% for release in news %}
-                <tr>
-                    <th width="20%">
-                        <h5 class="date">{{ release.date }}</h5>
-                    </th>
-                    <th width="80%">
-                        <h3 class="release">{{ release.name }}</h3>
-                        <p class="description">{{ release.description }}</p>
-                    </th>
-                </tr>
-            {% endfor %}   
-        </table>
-        {% else %}
-        <h1>Nothing posted yet</h1>
-        {% endif %}
+        <main>
+            {% if news %}
+            <table>
+                {% load static %}
+                {% for release in news %}
+                    <tr>
+                        <th width="20%">
+                            <h5 class="date">{{ release.date }}</h5>
+                        </th>
+                        <th width="80%">
+                            <h3 class="release">{{ release.name }}</h3>
+                            <p class="description">{{ release.description }}</p>
+                        </th>
+                    </tr>
+                {% endfor %}   
+            </table>
+            {% else %}
+            <h1>Nothing posted yet</h1>
+            {% endif %}
+        </main>
+        <footer>
+            
+        </footer>
     </body>
 </html>

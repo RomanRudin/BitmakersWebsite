@@ -34,3 +34,4 @@ After test, please, DELETE ALL THE DEFAULT VALUES ON THIS LEVEL             I
 class Links(models.Model):
     name = models.CharField(primary_key=True, max_length=100, name="name",  default="VK")
     link = models.CharField(max_length=2000, name='link',                   default="https://vk.com/")
+    #icon = models.ImageField(name="icon")

@@ -1,0 +1,71 @@
+@import 'standart';
+
+.thead {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  
+  .container {
+    height: 100%;
+    width: 100%;
+    resize: both;
+    @extend %display-flex
+  }
+  .line {
+    margin-bottom: 10px;
+    border: rgb(27, 6, 6) 5px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #CE1313 1%, #296964 65%);
+    max-height: fit-content;
+    min-height: 60px;
+    @extend %display-flex
+  }
+  .in-container {
+    max-height: 50px;
+    vertical-align: middle;
+  }
+  #spacer {
+    flex: 1 1 auto;
+  }
+  #img {
+    flex: 1 1 auto;
+  }
+  #beat {
+    flex: 7 1 auto;
+  }
+  #name {
+    flex: 8 1 auto;
+  }
+  #licenses {
+    flex: 3 1 auto;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .beat_player {
+    width: 90%;
+    align-self: center;
+    font-size: medium;
+    padding-top: 3px;
+  }
+  
+  .beat-name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: $main-font;
+    text-align: center;
+  }
+  
+  #beat-date {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  
+  
