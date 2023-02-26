@@ -1,3 +1,11 @@
+.container, .line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly safe;
+  align-items: center;
+  align-content: space-around; }
+
 body {
   background: linear-gradient(90deg, #339249 0%, #3929B7 100%);
   resize: both;
@@ -31,6 +39,9 @@ body {
   
 }*/
 /* Elements */
+main {
+  margin-top: 25px; }
+
 header {
   color: red;
   background-color: black; }
@@ -40,7 +51,16 @@ footer {
   background-color: #3e0e75b7; }
 
 nav {
-  height: 15%; }
+  height: 15%;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid black; }
+  nav button {
+    padding: 3rem 2rem;
+    width: 100%;
+    height: 100%;
+    background: #2975B7;
+    font-size: large; }
 
 table {
   overflow-y: auto;
@@ -64,26 +84,10 @@ tr {
 ::-webkit-scrollbar-thumb:hover {
   background: radial-gradient(#6B1D9A 0%, #FF0061 100%); }
 
-.nav-button {
-  width: 100%;
-  height: 100%;
-  background: #2975B7;
-  font-size: large; }
-
 .date {
   font-size: medium;
   text-align: center; }
 
-/* Main */
-.name {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center; }
-
-.description {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center; }
-
-/* Beats */
 .thead {
   text-align: center;
   margin-top: 0px;
@@ -105,24 +109,25 @@ tr {
   min-height: 60px; }
 
 .in-container {
-  display: inline-block;
   max-height: 50px;
   vertical-align: middle; }
 
 #spacer {
-  width: 5%; }
+  flex: 1 1 auto; }
 
 #img {
-  width: 5%; }
+  flex: 1 1 auto; }
 
 #beat {
-  width: 35%; }
+  flex: 7 1 auto; }
 
 #name {
-  width: 40%; }
+  flex: 8 1 auto; }
 
 #licenses {
-  width: 15%; }
+  flex: 3 1 auto;
+  display: flex;
+  gap: 1rem; }
 
 .beat_player {
   width: 90%;
@@ -144,18 +149,4 @@ tr {
   padding-top: 0px;
   padding-bottom: 0px; }
 
-/* Releases*/
-.release {
-  font-family: Arial, Helvetica, sans-serif; }
-
-.description {
-  font-family: Arial, Helvetica, sans-serif; }
-
-/* Links */
-.link-div {
-  font-family: Arial, Helvetica, sans-serif; }
-
-.link {
-  font-family: Arial, Helvetica, sans-serif; }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=beats.css.map */
