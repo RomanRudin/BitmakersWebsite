@@ -1,3 +1,9 @@
+/*$hover-difference: 20;
+$nav-background-color: linear-gradient(90deg, #3C1986 0%, #9700F3 100%);*/
+/*
+@mixin change-color($default1, $default2, $difference) {
+  background-color: linear-gradient(90deg, $default1 - $difference 0%, $default2 - $difference2 100%);;
+}*/
 nav {
   display: flex;
   flex-direction: row;
@@ -50,18 +56,24 @@ footer {
   background-color: #3e0e75b7; }
 
 nav {
-  height: 10%;
+  height: 5%;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  justify-content: space-evenly;
   gap: 2rem; }
   nav button {
-    padding: 3rem 3rem;
+    flex: 1 1 auto;
+    padding: 1.5rem 5rem;
     border: 2px solid black;
     border-radius: 15px;
     width: 100%;
     height: 100%;
-    background: #2975B7;
+    background: linear-gradient(90deg, #3C1986 0%, #9700F3 100%);
+    color: wheat;
     font-size: 25px; }
+    nav button:hover {
+      background: linear-gradient(90deg, #1e0d42 0%, #6601a5 100%); }
 
 table {
   overflow-y: auto;

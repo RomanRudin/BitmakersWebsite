@@ -1,10 +1,4 @@
-/*$hover-difference: 20;
-$nav-background-color: linear-gradient(90deg, #3C1986 0%, #9700F3 100%);*/
-/*
-@mixin change-color($default1, $default2, $difference) {
-  background-color: linear-gradient(90deg, $default1 - $difference 0%, $default2 - $difference2 100%);;
-}*/
-nav {
+nav, .container, .line, #licenses {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -56,24 +50,18 @@ footer {
   background-color: #3e0e75b7; }
 
 nav {
-  height: 5%;
+  height: 10%;
   width: 100%;
-  border-bottom: 2px solid black;
-  padding-bottom: 5px;
-  justify-content: space-evenly;
+  border-bottom: 1px solid black;
   gap: 2rem; }
   nav button {
-    flex: 1 1 auto;
-    padding: 1.5rem 5rem;
+    padding: 3rem 3rem;
     border: 2px solid black;
     border-radius: 15px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #3C1986 0%, #9700F3 100%);
-    color: wheat;
+    background: #2975B7;
     font-size: 25px; }
-    nav button:hover {
-      background: linear-gradient(90deg, #1e0d42 0%, #6601a5 100%); }
 
 table {
   overflow-y: auto;
@@ -106,12 +94,66 @@ a {
   font-size: medium;
   text-align: center; }
 
-.name {
+.thead {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+.container {
+  height: 100%;
+  width: 100%;
+  resize: both;
+  justify-content: space-evenly; }
+
+.line {
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+  border: #1b0606 5px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #CE1313 1%, #296964 65%);
+  max-height: fit-content;
+  min-height: 60px; }
+
+.in-container {
+  max-height: 50px;
+  flex: 0 1 auto; }
+
+#spacer {
+  width: 5%; }
+
+#img {
+  width: 5%; }
+
+#beat {
+  width: 35%; }
+
+#name {
+  width: 40%; }
+
+#licenses {
+  width: 15%;
+  gap: 1rem;
+  justify-content: space-evenly; }
+
+.beat_player {
+  width: 90%;
+  align-self: center;
+  font-size: medium; }
+
+.beat-name {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center; }
 
-.description {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center; }
+#beat-date {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=beats.css.map */

@@ -2,8 +2,7 @@
 
 .link-div {
     font-family: $main-font;
-    padding: 2rem 2rem;
-    @extend %display-flex;
+    @extend %display-flex
   }
   
   .link {
