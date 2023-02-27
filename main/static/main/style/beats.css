@@ -1,8 +1,7 @@
-.container, .line {
+nav, .container, .line, #licenses {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-evenly safe;
   align-items: center;
   align-content: space-around; }
 
@@ -51,16 +50,18 @@ footer {
   background-color: #3e0e75b7; }
 
 nav {
-  height: 15%;
+  height: 10%;
   width: 100%;
-  display: flex;
-  border-bottom: 1px solid black; }
+  border-bottom: 1px solid black;
+  gap: 2rem; }
   nav button {
-    padding: 3rem 2rem;
+    padding: 3rem 3rem;
+    border: 2px solid black;
+    border-radius: 15px;
     width: 100%;
     height: 100%;
     background: #2975B7;
-    font-size: large; }
+    font-size: 25px; }
 
 table {
   overflow-y: auto;
@@ -71,7 +72,12 @@ table {
 tr {
   margin-bottom: 10px; }
 
-/* General */
+a {
+  text-decoration: none;
+  font-weight: 400;
+  color: aliceblue; }
+
+/* scrollbar */
 ::-webkit-scrollbar {
   width: 10px; }
 
@@ -98,10 +104,12 @@ tr {
 .container {
   height: 100%;
   width: 100%;
-  resize: both; }
+  resize: both;
+  justify-content: space-evenly; }
 
 .line {
   margin-bottom: 10px;
+  padding-bottom: 3px;
   border: #1b0606 5px;
   border-radius: 25px;
   background: linear-gradient(90deg, #CE1313 1%, #296964 65%);
@@ -110,30 +118,29 @@ tr {
 
 .in-container {
   max-height: 50px;
-  vertical-align: middle; }
+  flex: 0 1 auto; }
 
 #spacer {
-  flex: 1 1 auto; }
+  width: 5%; }
 
 #img {
-  flex: 1 1 auto; }
+  width: 5%; }
 
 #beat {
-  flex: 7 1 auto; }
+  width: 35%; }
 
 #name {
-  flex: 8 1 auto; }
+  width: 40%; }
 
 #licenses {
-  flex: 3 1 auto;
-  display: flex;
-  gap: 1rem; }
+  width: 15%;
+  gap: 1rem;
+  justify-content: space-evenly; }
 
 .beat_player {
   width: 90%;
   align-self: center;
-  font-size: medium;
-  padding-top: 3px; }
+  font-size: medium; }
 
 .beat-name {
   margin-top: 0px;
