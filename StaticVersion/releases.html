@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% load static %}
+        <link href="{% static 'main/style/releases.css' %}" rel="stylesheet" />
+        <meta charset="UTF-8" />
+        <title>Future releases</title>
+    </head>
+    <body>
+        <nav>
+            <table width="100%">
+                <tr width="100%">   
+                    <th><form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="beats" value="beats">Beats</button></th>
+                    <th><form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
+                    </th>
+                    <th><form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="links" value="beats">Links</button>
+                    </th>
+                </tr>
+            </table>
+        </nav>
+        <main>
+            {% if news %}
+            <table>
+                {% load static %}
+                {% for release in news %}
+                    <tr>
+                        <th width="20%">
+                            <h5 class="date">{{ release.date }}</h5>
+                        </th>
+                        <th width="80%">
+                            <h3 class="release">{{ release.name }}</h3>
+                            <p class="description">{{ release.description }}</p>
+                        </th>
+                    </tr>
+                {% endfor %}   
+            </table>
+            {% else %}
+            <h1>Nothing posted yet</h1>
+            {% endif %}
+        </main>
+        <footer>
+            
+        </footer>
+    </body>
+</html>

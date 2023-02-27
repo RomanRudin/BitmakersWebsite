@@ -1,0 +1,21 @@
+@import 'standart';
+
+.link-div {
+    font-family: $main-font;
+    @extend %display-flex
+  }
+  
+  .link {
+    font-family: $main-font;
+    flex: 0 1 auto;
+  }
+  
+  #icon {
+    order: 0;
+    width: 8%;
+  }
+  
+  #link {
+    order: 1;
+    width: 92%;
+  }

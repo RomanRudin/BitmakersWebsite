@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% load static %}
+        <link href="{% static 'main/style/links.css' %}" rel="stylesheet" />
+        <meta charset="UTF-8" />
+        <title>Links</title>
+    </head>
+    <body>
+        <nav>
+            <table width="100%">
+                <tr width="100%">   
+                    <th><form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="beats" value="beats">Beats</button></th>
+                    <th><form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
+                    </th>
+                    <th><form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                        {% csrf_token %}
+                    </form>
+                    <button type="submit" class="nav-button" form="links" value="beats">Links</button>
+                    </th>
+                </tr>
+            </table>
+        </nav>
+        <main>
+            {% if links %}
+            <div>
+                {% for link in links %}
+                <div class="link-div">
+                    <i class="link" id="icon"></i>
+                    <a class="link" id="link" href="{{ link.link }}">{{ link.name }}</a>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </main>
+        <footer>
+            
+        </footer>
+    </body>
+</html>
