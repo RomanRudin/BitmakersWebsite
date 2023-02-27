@@ -10,24 +10,18 @@
     </head>
     <body>
         <nav>
-            <table width="100%">
-                <tr width="100%">   
-                    <th><form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="beats" value="beats">Beats</button></th>
-                    <th><form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
-                    </th>
-                    <th><form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="links" value="beats">Links</button>
-                    </th>
-                </tr>
-            </table>
+            <form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="beats" value="beats">Beats</button>
+            </form>
+            <form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
+            </form>
+            <form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="links" value="beats">Links</button>
+            </form>
         </nav>
         <main>
             {% if beats %}
@@ -54,11 +48,16 @@
                     <div class="line">
                         <div class="in-container" id="spacer"></div>
                         <div class="in-container" id="img">
-                            <!-- 
-                                In need of FileFields
-                            <img src={{ beat.beatogg }} />     
-                            -->
-                            <img src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" />
+                            <!--
+                                In need of downloading feature after clicking on icon
+                             -->
+                            <form method="POST" action="">
+                                <!-- 
+                                    In need of FileFields
+                                <img src={{ beat.beatogg }} />     
+                                -->
+                                <input type="image" src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" value="{{beat.name}}"/>
+                            </form>
                         </div>
                         <div class="in-container" id="beat" style="vertical-align: middle;">
                             <audio class="beat_player" controls>
