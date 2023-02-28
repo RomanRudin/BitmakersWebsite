@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,16 +9,17 @@
     </head>
     <body>
         <nav>
-            <div class="nav-button">Beats</div>
-            <div class="nav-button">Fututre releases</div>
-            <div class="nav-button">Links</div>
+            <button class="nav-button"><a href="beats.html">Beats</a></button>
+            <button class="nav-button"><a href="releases.html">Fututre releases</a></button>
+            <button class="nav-button"><a href="links.html">Links</button>
         </nav>
         <main>
+
+
            <table>
                <thead>
                    <tr>
                        <th width="10%">
-
                        </th>
                        <th width="35%">
                            <h3 class="thead">Track</h3>
@@ -32,43 +33,72 @@
                    </tr>
                </thead>     
            </table>
+
+
             <div class="line">
                 <div class="in-container" id="spacer"></div>
                 <div class="in-container" id="img">
-                    <!--
-                        In need of downloading feature after clicking on icon
-                     -->
-                    <form method="POST" action="">
-                        <!-- 
-                            In need of FileFields
-                        <img src={{ beat.beatogg }} />     
-                        -->
-                        <input type="image" src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" value="{{beat.name}}"/>
-                    </form>
+                    <img src="static/images/beats/" />
                 </div>
                 <div class="in-container" id="beat" style="vertical-align: middle;">
                     <audio class="beat_player" controls>
-                        <!-- 
-                            In need of FileFields
-                        <source src={{ beat.beatogg }} type="audio/ogg" />
-                        <source src={{ beat.beat }} type="audio/mpeg" />      
-                        -->
-                        <source src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" type="audio/mp3" />
-                        <source src="{% get_static_prefix %}main/media/{{ beat.name }}.ogg" type="audio/ogg" />
+                        <source src="static/media/Жаль.mp3" type="audio/mp3" />
                     </audio>
                 </div>
                 <div class="in-container" id="name">
-                    <p class="beat-name">{{ beat.name }}</p>
-                    <p class="date" id="beat-date">{{ beat.date }}</p>
+                    <p class="beat-name">Жаль</p>
+                    <p class="date" id="beat-date">21.02.2023</p>
                 </div>
                 <div class="in-container" id="license">
-                    <img src="static/images/" class="in-license" width="20%" />
-                    <img src="{% get_static_prefix %}main/image/license_wav.png" class="in-license" width="20%" />
-                    <img src="{% get_static_prefix %}main/image/license_trackout.png" class="in-license" width="20%" />
-                    <img src="{% get_static_prefix %}main/image/license_unlimited.png" class="in-license" width="20%" />
-                    <img src="{% get_static_prefix %}main/image/license_exclusive.png" class="in-license" width="20%" />
+                    <img src="static/images/license/license_mp3.png" class="in-license" />
+                    <img src="static/images/license/license_wav.png" class="in-license" />
+                    <img src="static/images/license/license_trackout.png" class="in-license" />
                 </div>
             </div>  
+
+
+            <div class="line">
+                <div class="in-container" id="spacer"></div>
+                <div class="in-container" id="img">
+                    <img src="static/images/beats/" />
+                </div>
+                <div class="in-container" id="beat" style="vertical-align: middle;">
+                    <audio class="beat_player" controls>
+                        <source src="static/media/Мы с тобою.mp3" type="audio/mp3" />
+                    </audio>
+                </div>
+                <div class="in-container" id="name">
+                    <p class="beat-name">Мы с тобою</p>
+                    <p class="date" id="beat-date">20.02.2023</p>
+                </div>
+                <div class="in-container" id="license">
+                    <img src="static/images/license/license_trackout.png" class="in-license" />
+                </div>
+            </div>  
+
+
+            <div class="line">
+                <div class="in-container" id="spacer"></div>
+                <div class="in-container" id="img">
+                    <img src="static/images/beats/" />
+                </div>
+                <div class="in-container" id="beat" style="vertical-align: middle;">
+                    <audio class="beat_player" controls>
+                        <source src="static/media/Пофиг.mp3" type="audio/mp3" />
+                    </audio>
+                </div>
+                <div class="in-container" id="name">
+                    <p class="beat-name">Пофиг</p>
+                    <p class="date" id="beat-date">19.02.2023</p>
+                </div>
+                <div class="in-container" id="license">
+                    <img src="static/images/license/license_mp3.png" class="in-license" />
+                    <img src="static/images/license/license_wav.png" class="in-license" />
+                    <img src="static/images/license/license_trackout.png" class="in-license" />
+                </div>
+            </div>  
+
+
         </main>
         <footer>
         

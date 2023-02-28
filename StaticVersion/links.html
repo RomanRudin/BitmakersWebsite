@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {% load static %}
-        <link href="{% static 'main/style/links.css' %}" rel="stylesheet" />
+        <link href="static/style/links.css" rel="stylesheet" />
         <meta charset="UTF-8" />
         <title>Links</title>
     </head>
     <body>
         <nav>
-            <form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                {% csrf_token %}
-                <button type="submit" class="nav-button" form="beats" value="beats">Beats</button>
-            </form>
-            <form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                {% csrf_token %}
-                <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
-            </form>
-            <form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                {% csrf_token %}
-                <button type="submit" class="nav-button" form="links" value="beats">Links</button>
-            </form>
+            <button class="nav-button"><a href="beats.html">Beats</a></button>
+            <button class="nav-button"><a href="releases.html">Fututre releases</a></button>
+            <button class="nav-button"><a href="links.html">Links</button>
         </nav>
         <main>
-            {% if links %}
             <div class="card-display">
-                {% for link in links %}
                 <div class="link-card">
                     <div class="card-content">
                         <i class="link" id="icon"></i>
-                        <a class="link" id="link" href="{{ link.link }}">{{ link.name }}</a>
+                        <a class="link" id="link" href="https://vk.com/khudyakovmusic">VK</a>
                     </div>
                 </div>
-                {% endfor %}
+                <div class="link-card">
+                    <div class="card-content">
+                        <i class="link" id="icon"></i>
+                        <a class="link" id="link" href="https://vk.com/id138733515">Another VK</a>
+                    </div>
+                </div>
             </div>
-            {% endif %}
         </main>
         <footer>
             
