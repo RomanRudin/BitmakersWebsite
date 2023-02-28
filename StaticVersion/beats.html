@@ -1,105 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {% load static %}
-        <link href="{% static 'main/style/beats.css' %}" rel="stylesheet" />
+        <link href="static/style/beats.css" rel="stylesheet" />
         <meta charset="UTF-8" />
         <title>beats</title>
     </head>
     <body>
         <nav>
-            <table width="100%">
-                <tr width="100%">   
-                    <th><form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="beats" value="beats">Beats</button></th>
-                    <th><form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
-                    </th>
-                    <th><form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="links" value="beats">Links</button>
-                    </th>
-                </tr>
-            </table>
+            <button class="nav-button"><a href="beats.html">Beats</a></button>
+            <button class="nav-button"><a href="releases.html">Fututre releases</a></button>
+            <button class="nav-button"><a href="links.html">Links</button>
         </nav>
         <main>
-            {% if beats %}
-                <table>
-                    <thead>
-                        <tr>
-                            <th width="10%">
 
-                            </th>
-                            <th width="35%">
-                                <h3 class="thead">Track</h3>
-                            </th>
-                            <th width="40%">
-                                <h3 class="thead">Name</h3>
-                            </th>
-                            <th width="15%">
-                                <h3 class="thead">Licenses</h3>
-                            </th>
-                        </tr>
-                    </thead>     
-                </table>
-                {% load static %}
-                {% for beat in beats %}
-                    <div class="line">
-                        <div class="in-container" id="spacer"></div>
-                        <div class="in-container" id="img">
-                            <!-- 
-                                In need of FileFields
-                            <img src={{ beat.beatogg }} />     
-                            -->
-                            <img src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" />
-                        </div>
-                        <div class="in-container" id="beat" style="vertical-align: middle;">
-                            <audio class="beat_player" controls>
-                                <!-- 
-                                    In need of FileFields
-                                <source src={{ beat.beatogg }} type="audio/ogg" />
-                                <source src={{ beat.beat }} type="audio/mpeg" />      
-                                -->
-                                <source src="{% get_static_prefix %}main/media/{{ beat.name }}.mp3" type="audio/mp3" />
-                                <source src="{% get_static_prefix %}main/media/{{ beat.name }}.ogg" type="audio/ogg" />
-                            </audio>
-                        </div>
-                        <div class="in-container" id="name">
-                            <p class="beat-name">{{ beat.name }}</p>
-                            <p class="date" id="beat-date">{{ beat.date }}</p>
-                        </div>
-                        <div class="in-container" id="license">
-                            {% if beat.lecense_mp3 %}
-                                <img src="{% get_static_prefix %}main/image/license_mp3.png" class="in-license" width="20%" />
-                            {% endif %} 
-                            {% if beat.license_wav %}
-                                <img src="{% get_static_prefix %}main/image/license_wav.png" class="in-license" width="20%" />
-                            {% endif %} 
-                            {% if beat.license_trackout %}
-                                <img src="{% get_static_prefix %}main/image/license_trackout.png" class="in-license" width="20%" />
-                            {% endif %} 
-                            {% if beat.license_unlimited %}
-                                <img src="{% get_static_prefix %}main/image/license_unlimited.png" class="in-license" width="20%" />
-                            {% endif %} 
-                            {% if beat.license_exclisive %}
-                                <img src="{% get_static_prefix %}main/image/license_exclisive.png" class="in-license" width="20%" />
-                            {% endif %} 
-                        </div>
-                    </div>  
-                {% endfor %}  
-            {% else %}
-                <h1>Nothing posted yet</h1>
-            {% endif %}
+
+           <table>
+               <thead>
+                   <tr>
+                       <th width="10%">
+                       </th>
+                       <th width="35%">
+                           <h3 class="thead">Track</h3>
+                       </th>
+                       <th width="40%">
+                           <h3 class="thead">Name</h3>
+                       </th>
+                       <th width="15%">
+                           <h3 class="thead">Licenses</h3>
+                       </th>
+                   </tr>
+               </thead>     
+           </table>
+
+
+            <div class="line">
+                <div class="in-container" id="spacer"></div>
+                <div class="in-container" id="img">
+                    <img src="static/images/beats/" />
+                </div>
+                <div class="in-container" id="beat" style="vertical-align: middle;">
+                    <audio class="beat_player" controls>
+                        <source src="static/media/Жаль.mp3" type="audio/mp3" />
+                    </audio>
+                </div>
+                <div class="in-container" id="name">
+                    <p class="beat-name">Жаль</p>
+                    <p class="date" id="beat-date">21.02.2023</p>
+                </div>
+                <div class="in-container" id="license">
+                    <img src="static/images/license/license_mp3.png" class="in-license" />
+                    <img src="static/images/license/license_wav.png" class="in-license" />
+                    <img src="static/images/license/license_trackout.png" class="in-license" />
+                </div>
+            </div>  
+
+
+            <div class="line">
+                <div class="in-container" id="spacer"></div>
+                <div class="in-container" id="img">
+                    <img src="static/images/beats/" />
+                </div>
+                <div class="in-container" id="beat" style="vertical-align: middle;">
+                    <audio class="beat_player" controls>
+                        <source src="static/media/Мы с тобою.mp3" type="audio/mp3" />
+                    </audio>
+                </div>
+                <div class="in-container" id="name">
+                    <p class="beat-name">Мы с тобою</p>
+                    <p class="date" id="beat-date">20.02.2023</p>
+                </div>
+                <div class="in-container" id="license">
+                    <img src="static/images/license/license_trackout.png" class="in-license" />
+                </div>
+            </div>  
+
+
+            <div class="line">
+                <div class="in-container" id="spacer"></div>
+                <div class="in-container" id="img">
+                    <img src="static/images/beats/" />
+                </div>
+                <div class="in-container" id="beat" style="vertical-align: middle;">
+                    <audio class="beat_player" controls>
+                        <source src="static/media/Пофиг.mp3" type="audio/mp3" />
+                    </audio>
+                </div>
+                <div class="in-container" id="name">
+                    <p class="beat-name">Пофиг</p>
+                    <p class="date" id="beat-date">19.02.2023</p>
+                </div>
+                <div class="in-container" id="license">
+                    <img src="static/images/license/license_mp3.png" class="in-license" />
+                    <img src="static/images/license/license_wav.png" class="in-license" />
+                    <img src="static/images/license/license_trackout.png" class="in-license" />
+                </div>
+            </div>  
+
+
         </main>
         <footer>
-            
+        
         </footer>
     </body>
 </html>
