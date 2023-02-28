@@ -4,7 +4,7 @@ $nav-background-color: linear-gradient(90deg, #3C1986 0%, #9700F3 100%);*/
 @mixin change-color($default1, $default2, $difference) {
   background-color: linear-gradient(90deg, $default1 - $difference 0%, $default2 - $difference2 100%);;
 }*/
-nav, .link-div {
+nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -106,20 +106,57 @@ a {
   font-size: medium;
   text-align: center; }
 
-.link-div {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 2rem 2rem; }
-
 .link {
   font-family: Arial, Helvetica, sans-serif;
-  flex: 0 1 auto; }
+  margin: 0px;
+  text-align: center; }
 
-#icon {
-  order: 0;
-  width: 8%; }
+.card-display {
+  border-radius: 50px;
+  background: radial-gradient(black -10%, transparent 100%);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between; }
 
-#link {
-  order: 1;
-  width: 92%; }
+.link-card {
+  aspect-ratio: 1.6 / 1;
+  border: 0.5vmin solid black;
+  width: 25vmin;
+  cursor: pointer;
+  position: relative; }
+  .link-card :before {
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    transition: background-position 350ms ease;
+    z-index: 1;
+    background: linear-gradient(130deg, transparent 0% 33%, purple 66%, red 83.5%, yellow 100%);
+    background-size: 300% 300%;
+    background-position: 0% 0%; }
+  .link-card :hover:before {
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03); }
+  .link-card :hover.card-content {
+    background-position: -10% 0%; }
+
+.card-content {
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 8%, transparent 8%);
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+  height: calc(100% - 10vmin);
+  padding: 5vmin;
+  position: relative;
+  width: calc(100% - 10vmin);
+  transition: background-position 350ms ease;
+  align-content: center;
+  z-index: 1; }
 
 /*# sourceMappingURL=links.css.map */

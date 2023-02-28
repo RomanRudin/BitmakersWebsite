@@ -25,11 +25,13 @@
         </nav>
         <main>
             {% if links %}
-            <div>
+            <div class="card-display">
                 {% for link in links %}
-                <div class="link-div">
-                    <i class="link" id="icon"></i>
-                    <a class="link" id="link" href="{{ link.link }}">{{ link.name }}</a>
+                <div class="link-card">
+                    <div class="card-content">
+                        <i class="link" id="icon"></i>
+                        <a class="link" id="link" href="{{ link.link }}">{{ link.name }}</a>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
