@@ -10,32 +10,28 @@
     </head>
     <body>
         <nav>
-            <table width="100%">
-                <tr width="100%">   
-                    <th><form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="beats" value="beats">Beats</button></th>
-                    <th><form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
-                    </th>
-                    <th><form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="links" value="beats">Links</button>
-                    </th>
-                </tr>
-            </table>
+            <form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="beats" value="beats">Beats</button>
+            </form>
+            <form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
+            </form>
+            <form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="links" value="beats">Links</button>
+            </form>
         </nav>
         <main>
             {% if links %}
-            <div>
+            <div class="card-display">
                 {% for link in links %}
-                <div class="link-div">
-                    <i class="link" id="icon"></i>
-                    <a class="link" id="link" href="{{ link.link }}">{{ link.name }}</a>
+                <div class="link-card">
+                    <div class="card-content">
+                        <i class="link" id="icon"></i>
+                        <a class="link" id="link" href="{{ link.link }}">{{ link.name }}</a>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

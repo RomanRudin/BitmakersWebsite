@@ -10,41 +10,31 @@
     </head>
     <body>
         <nav>
-            <table width="100%">
-                <tr width="100%">   
-                    <th><form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="beats" value="beats">Beats</button></th>
-                    <th><form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
-                    </th>
-                    <th><form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                        {% csrf_token %}
-                    </form>
-                    <button type="submit" class="nav-button" form="links" value="beats">Links</button>
-                    </th>
-                </tr>
-            </table>
+            <form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="beats" value="beats">Beats</button>
+            </form>
+            <form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
+            </form>
+            <form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="links" value="beats">Links</button>
+            </form>
         </nav>
         <main>
             {% if news %}
-            <table>
                 {% load static %}
                 {% for release in news %}
-                    <tr>
-                        <th width="20%">
-                            <h5 class="date">{{ release.date }}</h5>
-                        </th>
-                        <th width="80%">
-                            <h3 class="release">{{ release.name }}</h3>
-                            <p class="description">{{ release.description }}</p>
-                        </th>
-                    </tr>
+                    <div class="release-row">
+                        <h5 class="release-date">{{ release.date }}</h5>
+                        <div class="release-name-div">
+                            <h3 class="name">{{ release.name }}</h3>
+                            <h6 class="description">{{ release.description }}</h6>
+                        </div>
+                    </div>
                 {% endfor %}   
-            </table>
             {% else %}
             <h1>Nothing posted yet</h1>
             {% endif %}

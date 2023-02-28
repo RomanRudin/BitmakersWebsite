@@ -1,21 +1,78 @@
 @import 'standart';
 
-.link-div {
-    font-family: $main-font;
-    @extend %display-flex
-  }
-  
+$link-gradient1: purple;
+$link-gradient2: red;
+$link-gradient3: yellow ;
+
   .link {
     font-family: $main-font;
-    flex: 0 1 auto;
+    margin: 0px;
+    text-align: center;
   }
-  
-  #icon {
-    order: 0;
-    width: 8%;
+
+  .card-display {
+    border-radius: 50px;
+    background: radial-gradient(
+      $border-color -10%,
+      transparent 100% 
+    );
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
   }
-  
-  #link {
-    order: 1;
-    width: 92%;
+
+  .link-card {
+    aspect-ratio: 1.6 / 1;
+    border: 0.5vmin solid $border-color;
+    width: 25vmin;
+    cursor: pointer;
+    position: relative;
+
+    :before {
+      content: "";
+      height: 100%;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      transition: background-position 350ms ease;
+      z-index: 1;
+      background: linear-gradient(
+        130deg,
+        transparent 0% 33%,
+        $link-gradient1 66%,
+        $link-gradient2 83.5%,
+        $link-gradient3 100%
+      );
+      background-size: 300% 300%;
+      background-position: 0% 0%;
+    }
+    :hover:before{
+      background-position: 100% 100%;
+      transform: scale(1.08, 1.03);
+    }
+    :hover.card-content{
+      background-position: -10% 0%;
+    }
+  }
+
+  .card-content {
+    background: radial-gradient(
+      rgba(255, 255, 255, 0.2) 8%,
+      transparent 8%
+    );
+    background-position: 0% 0%;
+    background-size: 5vmin 5vmin;
+    height: calc(100% - 10vmin);
+    padding: 5vmin;
+    position: relative;
+    width: calc(100% - 10vmin);
+    transition: background-position 350ms ease;
+    align-content: center;
+    z-index: 1;
   }
