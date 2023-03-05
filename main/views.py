@@ -5,7 +5,7 @@ from django.template import loader
 from django.shortcuts import get_object_or_404, render
 import logging
 
-from .models import Links, Music, News
+from .models import Links, Beats, News, Tracks
 
 def index(request) -> HttpResponse:
     return render(request, 'main/main.html')
@@ -13,14 +13,26 @@ def index(request) -> HttpResponse:
 
 def beats(request) -> HttpResponse:
     try:
-        beats = Music.objects.order_by('name') #TODO order_by('date')
-    except Music.DoesNotExist:
+        beats = Beats.objects.order_by('name') #TODO order_by('date')
+    except Beats.DoesNotExist:
         raise Http404("Music does not exist")
     else:
         context = {
             'beats': beats,
         }
         return render(request, 'main/beats.html', context)
+        
+
+def tracks(request) -> HttpResponse:
+    try:
+        tracks = Tracks.objects.order_by('name') #TODO order_by('date')
+    except Tracks.DoesNotExist:
+        raise Http404("Music does not exist")
+    else:
+        context = {
+            'tracks': tracks,
+        }
+        return render(request, 'main/tracks.html', context)
 
 
 def releases(request) -> HttpResponse:

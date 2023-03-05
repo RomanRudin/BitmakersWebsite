@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% load static %}
+        <link href="{% static 'main/style/tracks.css' %}" rel="stylesheet" />
+        <meta charset="UTF-8" />
+        <title>tracks</title>
+    </head>
+    <body>
+        <nav>
+            <form method="POST" action="{% url 'tracks' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="beats" value="beats">Beats</button>
+            </form>
+            <form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="releases" value="releases">Fututre releases</button>
+            </form>
+            <form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                {% csrf_token %}
+                <button type="submit" class="nav-button" form="links" value="links">Links</button>
+            </form>
+        </nav>
+        <main>
+            {% if tracks %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="10%">
+
+                            </th>
+                            <th width="35%">
+                                <h3 class="thead">Track</h3>
+                            </th>
+                            <th width="40%">
+                                <h3 class="thead">Name</h3>
+                            </th>
+                            <th width="15%">
+                                <h3 class="thead">Licenses</h3>
+                            </th>
+                        </tr>
+                    </thead>     
+                </table>
+                {% load static %}
+                {% for track in tracks %}
+                    <div class="line">
+                        <div class="in-container" id="spacer"></div>
+                        <div class="in-container" id="img">
+                            <!--
+                                In need of downloading feature after clicking on icon
+                             -->
+                            <form method="POST" action="">
+                                <!-- 
+                                    In need of FileFields
+                                <img src={{ track.trackogg }} />     
+                                -->
+                                <input type="image" src="{% get_static_prefix %}main/media/{{ track.name }}.mp3" value="{{track.name}}"/>
+                            </form>
+                        </div>
+                        <div class="in-container" id="track" style="vertical-align: middle;">
+                            <audio class="track_player" controls>
+                                <!-- 
+                                    In need of FileFields
+                                <source src={{ track.trackogg }} type="audio/ogg" />
+                                <source src={{ track.track }} type="audio/mpeg" />      
+                                -->
+                                <source src="{% get_static_prefix %}main/media/{{ track.name }}.mp3" type="audio/mp3" />
+                                <source src="{% get_static_prefix %}main/media/{{ track.name }}.ogg" type="audio/ogg" />
+                            </audio>
+                        </div>
+                        <div class="in-container" id="name">
+                            <p class="track-name">{{ track.name }}</p>
+                            <p class="date" id="track-date">{{ track.date }}</p>
+                        </div>
+                        <div>
+                            {% for feat in track.feat %}
+                        </div>
+                    </div>  
+                {% endfor %}  
+            {% else %}
+                <h1>Nothing posted yet</h1>
+            {% endif %}
+        </main>
+        <footer>
+            
+        </footer>
+    </body>
+</html>

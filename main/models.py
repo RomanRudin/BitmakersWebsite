@@ -4,7 +4,7 @@ import datetime
 '''
 After test, please, DELETE ALL THE DEFAULT VALUES ON THIS LEVEL             I
 '''
-class Music(models.Model):
+class Beats(models.Model):
     name = models.CharField(primary_key=True, max_length=100, name='name',  default="Жаль")
     description = models.CharField(max_length=2000, name='description',     default="The best song in history of humanity")
     date = models.DateField(name="date", default=datetime.date.today)
@@ -17,6 +17,19 @@ class Music(models.Model):
     license_trackout = models.BooleanField(name="license_trackout", default=False)
     license_unlimited = models.BooleanField(name="license_unlimited", default=False)
     license_exclisive = models.BooleanField(name="license_exclisive", default=False)
+
+
+'''
+After test, please, DELETE ALL THE DEFAULT VALUES ON THIS LEVEL
+'''
+class Tracks(models.Model):
+    name = models.CharField(primary_key=True, max_length=100, name='name',  default="Жаль")
+    description = models.CharField(max_length=2000, name='description',     default="The best song in history of humanity")
+    date = models.DateField(name="date", default=datetime.date.today)
+    # link = models.CharField(max_length=100, name='link')
+    # image = models.ImageField(name='image')
+    # track = models.FileField(name='track')
+    # trackogg = models.FileField(name='trackogg')
 
 
 '''

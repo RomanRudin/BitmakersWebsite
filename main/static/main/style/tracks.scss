@@ -1,0 +1,71 @@
+@import 'standart';
+
+.thead {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  
+  .container {
+    height: 100%;
+    width: 100%;
+    resize: both;
+    @extend %display-flex;
+    justify-content: space-evenly;
+  }
+  .line {
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    border: black 5px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #CE1313 1%, #296964 65%);
+    max-height: fit-content;
+    min-height: 60px;
+    @extend %display-flex;
+  }
+  .in-container {
+    max-height: 50px;
+    flex: 0 1 auto;
+  }
+  #spacer {
+    width: 5%;
+  }
+  #img {
+    width: 5%;
+  }
+  #track {
+    width: 35%;
+  }
+  #name {
+    width: 40%;
+  }
+  #licenses {
+    width: 15%;
+    gap: 1rem;
+    @extend %display-flex;
+    justify-content: space-evenly;
+  }
+  
+  .track_player {
+    width: 90%;
+    align-self: center;
+    font-size: medium;
+  }
+  
+  .track-name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: $main-font;
+    text-align: center;
+  }
+  
+  #track-date {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
