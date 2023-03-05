@@ -9,20 +9,26 @@
         <title>Links</title>
     </head>
     <body>
-        <nav>
-            <form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                {% csrf_token %}
-                <button type="submit" class="nav-button" form="beats" value="beats">Beats</button>
-            </form>
-            <form method="POST" action="{% url 'releases' %}" id="releases" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                {% csrf_token %}
-                <button type="submit" class="nav-button" form="releases" value="beats">Fututre releases</button>
-            </form>
-            <form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
-                {% csrf_token %}
-                <button type="submit" class="nav-button" form="links" value="beats">Links</button>
-            </form>
-        </nav>
+        <header>
+            <nav>
+                <form method="POST" action="{% url 'beats' %}" id="beats" width="50%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                    {% csrf_token %}
+                    <button type="submit" class="nav-button" form="beats" value="beats">Beats</button>
+                </form>
+                <form method="POST" action="{% url 'tracks' %}" id="tracks" width="40%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                    {% csrf_token %}
+                    <button type="submit" class="nav-button" form="tracks" value="tracks">Tracks</button>
+                </form>
+                <form method="POST" action="{% url 'releases' %}" id="releases" width="10%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                    {% csrf_token %}
+                    <button type="submit" class="nav-button" form="releases" value="releases">Fututre releases</button>
+                </form>
+                <form method="POST" action="{% url 'links' %}" id="links" width="25%"> <!-- href="{% get_static_prefix %}main/{{ project.name }}"> -->
+                    {% csrf_token %}
+                    <button type="submit" class="nav-button" form="links" value="links">Links</button>
+                </form>
+            </nav>
+        </header>
         <main>
             {% if links %}
             <div class="card-display">
